@@ -10,11 +10,54 @@ def extract_text_from_pdf(pdf_path):
     with fitz.open(pdf_path) as doc:
         for page in doc:
             text += page.get_text()
+    with fitz.open(pdf_path) as doc:
+        for page in doc:
+            text += page.get_text()
     return text
 
 # Example usage
 pdf_path = "NGOTextFile.pdf"
 extracted_text = extract_text_from_pdf(pdf_path)
+#print(extracted_text) 
+
+def segment_pdf(file_path, break_pages):
+    segments = []
+    current_segment = []
+
+    with fitz.open(file_path) as doc:
+        for page_number in range(len(doc)):
+            # Check if this page is a break page
+            if page_number + 1 in break_pages:
+                # Add the current segment to segments (if it's not empty)
+                if current_segment:
+                    segments.append(' '.join(current_segment))
+                    current_segment = []
+
+            # Extract text from the current page
+            page = doc.load_page(page_number)
+            page_text = page.get_text()
+            current_segment.append(page_text)
+
+        # Add the last segment
+        if current_segment:
+            segments.append(' '.join(current_segment))
+
+    return segments
+
+# List of pages where each new document starts
+break_pages = [7, 11, 15, 18, 24, 27, 31, 36, 40, 45, 49, 53, 57, 60, 65, 70, 76, 80, 85, 90, 98]  # Modify this list as needed
+
+# Segment the PDF
+pdf_segments = segment_pdf(pdf_path, break_pages)
+
+# Displaying the first few characters of each segment to verify
+segment_previews = {i+1: segment[:500] + '...' for i, segment in enumerate(pdf_segments)}
+
+def preprocess_segments(segments):
+    preprocessed_segments = []
+    for segment in segments:
+        # Tokenization
+        from nltk.tokenize import word_tokenize
 #print(extracted_text) 
 
 def segment_pdf(file_path, break_pages):
