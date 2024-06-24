@@ -52,7 +52,7 @@ data_by_artist.fillna(data_by_artist.mean(), inplace=True)
 data_by_genres.fillna(data_by_genres.mean(), inplace=True)
 data_by_year.fillna(data_by_year.mean(), inplace=True)
 data_w_genres.fillna(data_w_genres.mean(), inplace=True)
-"""
+
 # Select relevant features for modeling
 selected_features = [
     'valence', 'year', 'acousticness', 'danceability', 'duration_ms', 
@@ -107,4 +107,4 @@ y_pred = model.predict(X_val)
 mse = mean_squared_error(y_val, y_pred)
 print(f'Mean Squared Error: {mse}')
 
- """
+ 
