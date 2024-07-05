@@ -35,14 +35,14 @@ Implementing the Random Forest model will provide Big Mountain Resort with accur
 Future work should incorporate weekday pricing and more detailed cost analyses, including potential savings from removing fast quads. Developing an app to integrate these models into the resort's operations would facilitate real-time decision-making and continuous improvement.
 
 ## Figures
-### Model Performance Comparison
-![Model Performance Comparison](URL_TO_YOUR_IMAGE_1)
+### Cross-Validation Score
+![Cross Validation Score](https://github.com/shrekapoor99/Springboard/blob/main/crossvalidationscores.png)
 
-### Confusion Matrix
-![Confusion Matrix](URL_TO_YOUR_IMAGE_2)
+### Forest Regressor Features (model selected)
+![Forest Regressor Features](https://github.com/shrekapoor99/Springboard/blob/main/forestregressorfeatures.png)
 
-### Feature Importance Plot
-![Feature Importance Plot](URL_TO_YOUR_IMAGE_3)
+### Feature Correlation Plot
+![Feature Corrleation Plot](https://github.com/shrekapoor99/Springboard/blob/main/featurecorrelationplot.png)
 
 ## Process and Understanding
 
