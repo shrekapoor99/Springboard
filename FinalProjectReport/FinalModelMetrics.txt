@@ -1,0 +1,26 @@
+Final Model metrics for Random Forest Model:
+
+Features: inputted reduced PCA (principal-component analysis) dimensionality data, to 2 dimensions, originally based off the TF-IDF matrix of word frequencies accross all 20 documents of the data with targeted cluster labels as well from K-means clustering (2 total clusters)
+
+Parameters: The learned decision trees in the Random Forest, which determine how splits are made. The individual splits or thresholds chosen at each node in the decision trees are learned from the training data.
+
+Hyperparameters tuned: The number of trees (n_estimators), maximum depth (max_depth), and minimum samples required to split a node (min_samples_split).
+Best Parameters Found: n_estimators=50, max_depth=None, min_samples_split=2.
+
+
+Performance Metrics: Accuracy, Precision, Recall, F1-Score, and Cross-Validation Accuracy
+Results: 
+
+Random Forest Stratified 3-Fold CV Accuracy: 1.0000
+Random Forest Test Accuracy: 0.8750
+Classification Report for Random Forest:
+              precision    recall  f1-score   support
+
+           0       1.00      0.75      0.86         4
+           1       0.80      1.00      0.89         4
+
+    accuracy                           0.88         8
+   macro avg       0.90      0.88      0.87         8
+weighted avg       0.90      0.88      0.87         8
+
+
